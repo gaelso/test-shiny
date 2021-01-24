@@ -1,7 +1,16 @@
+
+## https://shiny.rstudio.com/tutorial/
+
+## https://mastering-shiny.org/
+
+## https://mastering-shiny-solutions.org/
+
+
+## Packages (added DT)
 # install.packages(c(
 #   "gapminder", "ggforce", "globals", "openintro", "RSQLite", "shiny", 
 #   "shinycssloaders", "shinyFeedback", "shinythemes", "testthat", 
-#   "thematic", "tidyverse", "vroom", "waiter", "xml2", "zeallot" 
+#   "thematic", "tidyverse", "vroom", "waiter", "xml2", "zeallot", "DT"
 # ))
 
 

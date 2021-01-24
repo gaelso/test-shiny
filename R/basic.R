@@ -52,14 +52,53 @@ ui <- fluidPage(
   fileInput("upload", NULL),
   
   ## Action button
-  actionButton("click", "Click me!"),
-  actionButton("drink", "Drink me!", icon = icon("cocktail"))
+  fluidRow(
+    actionButton("click", "Click me!", class = "btn-danger"),
+    actionButton("drink", "Drink me!", class = "btn-lg btn-success")
+  ),
+  fluidRow(
+    actionButton("eat", "Eat me!", class = "btn-block")
+  ),
+  
+  ## Output text
+  textOutput("text"),
+  verbatimTextOutput("code"),
+  
+  ## Table output
+  tableOutput("static"),
+  dataTableOutput("dynamic"),
+  dataTableOutput("dynamic2"),
+  
+  ## Plot output
+  plotOutput("plot", width = "400px")
   
 )
 
 
 server <- function(input, output, session) {
   
+  ## Output text
+  output$text <- renderText({ 
+    input$name2
+  })
+  output$code <- renderPrint({ 
+    summary(1:10) 
+  })
+  
+  ## Output table
+  output$static <- renderTable(head(mtcars))
+  output$dynamic <- renderDataTable(mtcars, options = list(pageLength = 5))
+  output$dynamic2 <- renderDataTable(
+    mtcars, 
+    options = list(
+      pageLength = 5,
+      ordering = FALSE, 
+      searching = FALSE
+      )
+    )
+  
+  ## Output plot
+  output$plot <- renderPlot(plot(1:5), res = 96)
   
 }
 
