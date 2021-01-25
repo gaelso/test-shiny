@@ -1,6 +1,7 @@
 library(shiny)
 
 ui <- fluidPage(
+  theme = shinythemes::shinytheme("sandstone"),
   titlePanel("Central limit theorem"),
   sidebarLayout(
     sidebarPanel(
@@ -8,7 +9,8 @@ ui <- fluidPage(
     ),
     mainPanel(
       plotOutput("hist")
-    )
+    ),
+    position = "right"
   )
 )
 
@@ -18,3 +20,5 @@ server <- function(input, output, session) {
     hist(means, breaks = 20)
   }, res = 96)
 }
+
+shinyApp(ui, server)
