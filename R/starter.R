@@ -7,11 +7,11 @@
 
 
 ## Packages (added DT)
-install.packages(c(
-  "gapminder", "ggforce", "globals", "openintro", "RSQLite", "shiny",
-  "shinycssloaders", "shinyFeedback", "shinythemes", "testthat",
-  "thematic", "tidyverse", "vroom", "waiter", "xml2", "zeallot", "DT"
-))
+# install.packages(c(
+#   "gapminder", "ggforce", "globals", "openintro", "RSQLite", "shiny",
+#   "shinycssloaders", "shinyFeedback", "shinythemes", "testthat",
+#   "thematic", "tidyverse", "vroom", "waiter", "xml2", "zeallot", "DT"
+# ))
 
 
 library(shiny)
