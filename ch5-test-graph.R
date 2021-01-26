@@ -1,16 +1,7 @@
 
 library(DiagrammeR)
 
-mermaid("
-graph LR
-  A>code]-->B>selective>
-  B-->D(summary)
-")
-
-ch5_graph
-
-
-grViz("digraph {
+ch5_graph <- grViz("digraph {
   
   graph [layout = dot, rankdir = LR]
   
